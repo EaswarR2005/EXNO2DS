@@ -80,9 +80,49 @@ df
 ![image](https://github.com/user-attachments/assets/3a15901a-0560-4954-8cbe-42571b01c1ef)
 
 ```
+sns.catplot(x="Gender",col="Survived",kind="count",data=df,height=5,aspect=.7)
+```
+![image](https://github.com/user-attachments/assets/9a5264af-3d8d-49a3-b86d-10f5d640dc9f)
+```
+sns.catplot(x='Survived',hue="Gender",data=df,kind="count")
+```
+![image](https://github.com/user-attachments/assets/0d2943d4-18de-4fd7-ad42-fa93d85321a1)
 
 ```
+df.boxplot(column="Age",by="Survived")
+```
+![image](https://github.com/user-attachments/assets/88864778-988a-4a7b-9b7b-e4d7b29dc60e)
+
+```
+sns.scatterplot(x=df["Age"],y=df["Fare"])
+```
+![image](https://github.com/user-attachments/assets/901bfcc3-b35f-483d-ba60-4a197d691a1f)
+
+```
+sns.jointplot(x="Age",y="Fare",data=df)
+```
+![image](https://github.com/user-attachments/assets/4a6cc90f-a12f-41b2-9551-08f3f944574b)
+
+```
+fig,ax1 = plt.subplots(figsize=(8,5))
+pt = sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
+```
+![image](https://github.com/user-attachments/assets/9097d508-96c2-4e76-94f0-5f14285b8610)
+```
+sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
+```
+![image](https://github.com/user-attachments/assets/604554dc-9112-4545-b212-abf01aef7ddf)
+
+```
+import seaborn as sns
+corr=df.corr()
+sns.heatmap(corr,annot=True)
+```
+```
+sns.pairplot(df)
+```
+![image](https://github.com/user-attachments/assets/4dd5dee9-f124-4b48-a70a-b3ff7a06cfb5)
 
 
-# RESULT
-        <<INCLUDE YOUR RESULT HERE>>
+# RESULT:
+    Thus the data analysis has been implemented succesfully.
